@@ -1,0 +1,42 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>MovieMania</title>
+  </head>
+  <body>
+    <h1>MovieMania</h1>
+
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Harry Potter" />
+      <img id="icon" src="assets/icon.svg" alt="icon" />
+    </div>
+
+    <div class="modal-container">
+      <div class="modal-content">
+        <span id="close">&times;</span>
+        <div class="modal-info">
+          <img alt="Movie Poster" id="modal-poster" />
+          <div class="modal-details">
+            <h2>Details</h2>
+            <p id="modal-type">Type: <span id="s-type"> </span></p>
+            <p id="modal-title">Title:<span id="s-title"></span></p>
+            <p id="modal-year">Release Date: <span id="s-year"> </span></p>
+            <p id="modal-id">Visit Source:<span id="s-imbID"></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="container"></div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,269 @@
+* {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #212426;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1 {
+  margin: 2rem 0;
+  font-size: 4rem;
+  letter-spacing: 0.9;
+  width: fit-content;
+  background: linear-gradient(
+    to right,
+    rgba(255, 166, 77, 1) 0%,
+    rgba(255, 102, 0, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
+}
+
+.search-container {
+  min-width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1f2123;
+  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+  border-radius: 3rem;
+  padding: 1.5rem 1.75rem;
+  margin: 2rem 0;
+}
+
+#searchInput {
+  flex: 1;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-right: 1rem;
+  outline: none;
+  color: #a1a1a1;
+  background: transparent;
+}
+
+#icon {
+  height: 40px;
+  cursor: pointer;
+}
+
+#container {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.movie-container {
+  position: relative;
+  margin: 1rem;
+  width: 310px;
+  height: 460px;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.movie-container:hover {
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.09, 1.09);
+}
+
+.movie-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movie-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  padding: 20px 10px;
+  border-top: 1px solid #fff; /* White border on top */
+}
+
+.movie-title {
+  color: #fff;
+  font-size: 1.4rem;
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+.movie-type {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+/* ------------------------------------------------------Modal------------------------------------------ */
+
+.modal-container {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.95);
+  left: 0;
+  top: 0;
+}
+
+.modal-content {
+  background-color: #1f2123;
+  max-width: 65%;
+  margin: 5% auto;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+#close {
+ position: absolute;
+ color: white;
+ right: 10px;
+ font-weight: bold;
+ font-size: 2rem;
+ cursor: pointer;
+}
+
+.modal-info {
+  display: flex;
+}
+
+#modal-poster {
+  max-height: 800px;
+  height: auto;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  flex: 1;
+}
+
+.modal-details {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  color: #555;
+  padding: 20px 30px;
+  font-weight: bold;
+  background-color: #2c2f33;
+  border-radius: 8px;
+}
+
+.modal-details h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #ccc;
+  margin-bottom: 40px;
+}
+
+.modal-details p {
+  padding: 10px;
+  font-weight: normal;
+  font-size: 1.3rem;
+}
+
+.modal-details span {
+  color: #3498db;
+  padding-left: 4px;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: #3498db;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* -----------------------------------------------Media Queries---------------------------------------------------------------------- */
+
+
+@media screen and (max-width: 1000px) {
+
+  .modal-details h2 {
+      margin: 0;
+  }
+
+  .modal-content {
+    max-width: 65%; /* Adjusted width */
+  }
+
+  .modal-info {
+    flex-direction: column;
+  }
+
+  #modal-poster {
+    max-width: 100%; /* Adjusted width */
+    max-height: 570px;
+    height: auto;
+    border-radius: 0; /* Reset border radius */
+  }
+
+  .modal-details {
+    padding: 30px;
+    max-width: 100%;
+  }
+
+  .modal-details p {
+    padding: 5px; /* Adjusted padding */
+    font-size: 1.2rem; 
+  
+}
+
+}
+
+@media screen and (max-width: 650px) {
+
+  .modal-content {
+    max-width: 90%; /* Adjusted width */
+  }
+
+  .modal-details p {
+    font-size: 1rem; 
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.modal-details h2 {
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+}
+
+.search-container {
+  margin: 0;
+  max-width: 95%;
+}
+
+#searchInput {
+  font-size: .9rem;
+}
+
+#icon {
+  height: 16px;
+}
+
+}
