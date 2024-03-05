@@ -10,7 +10,7 @@ MovieMania is a responsive web application that provides access to a vast librar
 - `index.html`: The main HTML file for the application.
 - `style.css`: The CSS file for styling the application.
 
-# Folder/File Architecture
+# Architecture
 - assets
   - icon.svg
   - desktop.png
